@@ -1,0 +1,9 @@
+default/cache*
+default/logs*
+default/world/*
+default/world_the_end/*
+**/bStats/config.yml
+eula.txt
+lastupdate
+semicolon_delimited_script
+.dat
