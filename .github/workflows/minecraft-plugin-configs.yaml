@@ -1,0 +1,42 @@
+---
+name: minecraft-configs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+  get-configs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+          fetch-depth: 1
+      - uses: addnab/docker-run-action@v2
+        continue-on-error: true
+        timeout-minutes: 1
+        with:
+          image: itzg/minecraft-server:latest
+          shell: bash
+          options: |
+            -v ${{ github.workspace }}/default:/data/plugins
+            -e MAX_TICK_TIME=1 -e MAX_WORLD_SIZE=1 -e EULA=TRUE
+            -e ALLOW_NETHER=false -e VERSION=1.16.5 -e TYPE=PAPER
+          run: /start
+      - name: Delete plugins
+        run: find . -type f -name "*.jar" -delete
+      - name: Create pull request for HelmRelease annotations
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: minecraft-configs
+          title: "[minecraft] update default configs [ci-skip]"
+          signoff: true
+          committer: "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+          author: "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+          commit-message: "chore(deps): update default minecraft configs"
+          body: |
+            Signed-off-by: ArchitectSMP <bloodycoffin@users.noreply.github.com>
+          labels: minecraft/configs
