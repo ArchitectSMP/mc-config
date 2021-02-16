@@ -1,0 +1,13 @@
+**/paper/cache*
+**/paper/logs*
+**/paper/world/*
+**/world_the_end/*
+**/bStats/config.yml
+**/translations/*
+**/.archive-unpack/*
+**/dynmap/web/*
+eula.txt
+lastupdate
+semicolon_delimited_script
+.dat
+version_history.json
