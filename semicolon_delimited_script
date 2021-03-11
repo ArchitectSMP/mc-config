@@ -1,0 +1,1 @@
+/start &; sleep 60; killall java
