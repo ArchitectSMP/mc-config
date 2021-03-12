@@ -1,0 +1,30 @@
+[00:46:57] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[00:46:57] [main/INFO]: Found new data pack file/bukkit, loading it automatically
+[00:46:58] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[00:46:58] [Worker-Main-1/INFO]: Loaded 7 recipes
+[00:47:00] [Server thread/INFO]: Starting minecraft server version 1.16.5
+[00:47:00] [Server thread/INFO]: Loading properties
+[00:47:00] [Server thread/INFO]: This server is running Paper version git-Paper-545 (MC: 1.16.5) (Implementing API version 1.16.5-R0.1-SNAPSHOT)
+[00:47:00] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[00:47:00] [Server thread/INFO]: Using 4 threads for Netty based IO
+[00:47:00] [Server thread/INFO]: Debug logging is disabled
+[00:47:00] [Server thread/INFO]: Default game type: SURVIVAL
+[00:47:00] [Server thread/INFO]: Generating keypair
+[00:47:00] [Server thread/INFO]: Starting Minecraft server on *:25565
+[00:47:00] [Server thread/INFO]: Using epoll channel type
+[00:47:00] [Server thread/INFO]: Preparing level "world"
+[00:47:06] [Server thread/WARN]: Unable to find spawn biome
+[00:47:06] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[00:47:07] [Server thread/INFO]: Loaded 0 spawn chunks for world world
+[00:47:07] [Worker-Main-1/INFO]: Preparing spawn area: 0%
+[00:47:07] [Worker-Main-1/INFO]: Preparing spawn area: 0%
+[00:47:07] [Server thread/INFO]: Time elapsed: 687 ms
+[00:47:07] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[00:47:08] [Server thread/INFO]: Loaded 0 spawn chunks for world world_the_end
+[00:47:08] [Server thread/INFO]: Time elapsed: 1245 ms
+[00:47:08] [Server thread/INFO]: Starting remote control listener
+[00:47:08] [Server thread/INFO]: Thread RCON Listener started
+[00:47:08] [Server thread/INFO]: RCON running on 0.0.0.0:25575
+[00:47:08] [Server thread/INFO]: Running delayed init tasks
+[00:47:08] [Server thread/INFO]: Done (8.244s)! For help, type "help"
+[00:47:08] [Server thread/INFO]: Timings Reset
