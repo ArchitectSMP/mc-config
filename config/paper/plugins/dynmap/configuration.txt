@@ -1,0 +1,9 @@
+storage:
+  type: mysql
+  hostname: minecraft-database-mariadb
+  port: 3306
+  database: architectsmp
+  userid: root
+  password: architectsmp
+  prefix: "dm_"
+  flags: "?allowReconnect=true"
