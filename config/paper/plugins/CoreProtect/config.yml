@@ -1,0 +1,4 @@
+use-mysql: true
+mysql-host: minecraft-database-mariadb
+mysql-database: architectsmp
+mysql-password: architectsmp

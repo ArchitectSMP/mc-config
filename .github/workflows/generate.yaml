@@ -1,5 +1,5 @@
 ---
-name: minecraft-configs
+name: generate
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
     - cron: "0 */6 * * *"
 
 jobs:
-  get-configs:
+  paper:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,9 +26,9 @@ jobs:
           shell: bash
           options: |
             -v ${{ github.workspace }}/base/paper:/data
-            -e UID=1001 -e GID=116 
-            -e MAX_TICK_TIME=1 -e MAX_WORLD_SIZE=1 -e EULA=TRUE
-            -e ALLOW_NETHER=false -e VERSION=1.16.5 -e TYPE=PAPER
+            -e UID=1001 -e GID=116 -e EULA=TRUE
+            -e MAX_TICK_TIME=1 -e MAX_WORLD_SIZE=1
+            -e VERSION=1.16.5 -e TYPE=PAPER
           run: |
             /start &
             sleep 60
@@ -36,7 +36,7 @@ jobs:
       - name: Cleanup
         run: |
           sudo find ${{ github.workspace }}/base/paper/ -type f -name "*.jar" -delete
-          find ${{ github.workspace }}/base/paper/ -type f -exec sed -i -e '/^[ \t]*#/d; /^[[:space:]]*$/d' {} +
+          find ${{ github.workspace }}/base/paper/ -type f -exec sed -i -e '/^[ \t]*#/d; /^[[:space:]]*$/d; s/[[:blank:]]*$//' {} +
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
