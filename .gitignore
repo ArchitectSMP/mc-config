@@ -7,6 +7,7 @@
 **/dynmap/templates/*
 **/dynmap/web/*
 **/LuckPerms/contexts.json
+**/Multiverse-Core/worlds.yml
 **/paper/cache*
 **/paper/logs*
 **/paper/world/*
