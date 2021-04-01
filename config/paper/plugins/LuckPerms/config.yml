@@ -1,9 +1,0 @@
-server: ${CFG_SERVER_NAME}
-storage-method: mariadb
-data:
-  address: minecraft-database-mariadb
-  database: architectsmp
-  username: root
-  password: architectsmp
-messaging-service: pluginmsg
-auto-op: true
