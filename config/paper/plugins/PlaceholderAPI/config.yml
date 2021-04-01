@@ -1,0 +1,6 @@
+expansions:
+  player:
+    ping_color:
+      medium: '&e'
+      high: '&a'
+      low: '&c'

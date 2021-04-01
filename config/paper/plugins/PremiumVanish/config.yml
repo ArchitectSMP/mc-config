@@ -1,0 +1,34 @@
+InvisibilityFeatures:
+  DisableHunger: false
+  DisablePush: true
+  SwitchGamemode: false
+SurvivalFriendlyFeatures:
+  GameMode:
+    AlwaysApplyOnJoinVanished: false
+ScoreboardOptions:
+  Enable: false
+HookOptions:
+  EnableEssentialsHook: false
+  EnableDynmapHook: false
+  DynmapSendJoinLeaveMessages: false
+  EnableLibsDisguisesHook: false
+  EnableDisguiseCraftHook: false
+  EnableTrailGUIHook: false
+  EnableSuperTrailsHook: false
+  EnableMVdWPlaceholderAPIHook: false
+  EnableCitizensHook: false
+  EnableCustomParticleEffectsHook: false
+  EnableNametagEditHook: false
+  EnableFeatherBoardHook: false
+  EnableEnjinMinecraftPluginHook: false
+  EnableCMIHook: false
+  EnableDiscordSRVHook: false
+MiscellaneousOptions:
+  Bungeecord:
+    Enable: true
+    Ip: "minecraft-database-mariadb"
+    User: "root"
+    Password: "architectsmp"
+    Database: "architectsmp"
+  AntiSpam:
+    AntiSpamCheck: false
