@@ -1,0 +1,17 @@
+Configuration:
+  Database:
+    Enable: true
+    Ip: "minecraft-database-mariadb"
+    Port: "3306"
+    CustomURI: ""
+    User: "root"
+    Password: "architectsmp"
+    Database: "architectsmp"
+    BasicDatabaseConnector: false
+  Features:
+    ReplaceBungeeCommands: true
+    AdjustPlayerCount: true
+    FilterTabCompletions: true
+    CustomCommandMessages:
+      /examplemsg1 <vanished>: "&cPlayer not found"
+      /makemeadmin2 group <...> useradd <vanished>: "&c<vanished> is totally not online!"

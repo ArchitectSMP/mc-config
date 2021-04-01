@@ -22,6 +22,7 @@ world-settings:
       leashed: true
       younger-than: 0
       type:
+        - villager
       metadata:
         - Elitemob # Elite mobs from the plugin EliteMobs.
         - Elitemobs_NPC # NPCs from the plugin EliteMobs.

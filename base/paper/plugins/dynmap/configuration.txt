@@ -1,6 +1,13 @@
 deftemplatesuffix: hires
 storage:
-  type: filetree
+  type: mysql
+  hostname: minecraft-database-mariadb
+  port: 3306
+  database: architectsmp
+  userid: root
+  password: architectsmp
+  prefix: "dm_"
+  flags: "?allowReconnect=true"
 components:
   - class: org.dynmap.ClientConfigurationComponent
   - class: org.dynmap.InternalClientUpdateComponent
@@ -153,17 +160,17 @@ persist-ids-by-ip: true
 cyrillic-support: false
 round-coordinates: true
 msg:
-    maptypes: "Map Types"
-    players: "Players"
-    chatrequireslogin: "Chat Requires Login"
-    chatnotallowed: "You are not permitted to send chat messages"
-    hiddennamejoin: "Player joined"
-    hiddennamequit: "Player quit"
+  maptypes: "Map Types"
+  players: "Players"
+  chatrequireslogin: "Chat Requires Login"
+  chatnotallowed: "You are not permitted to send chat messages"
+  hiddennamejoin: "Player joined"
+  hiddennamequit: "Player quit"
 url:
 custom-commands:
-    image-updates:
-        preupdatecommand: ""
-        postupdatecommand: ""
+  image-updates:
+    preupdatecommand: ""
+    postupdatecommand: ""
 snapshotcachesize: 500
 soft-ref-cache: true
 verbose: false
