@@ -1,5 +1,5 @@
 donation-key:
-use-mysql: false
+use-mysql: true
 table-prefix: co_
 mysql-host: 127.0.0.1
 mysql-port: 3306
