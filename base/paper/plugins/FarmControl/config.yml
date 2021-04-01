@@ -1,0 +1,90 @@
+
+version: 2
+
+cycle-period: 600
+
+world-settings:
+  default:
+    profiles:
+      proactive:
+        - soft-nerf-animal-farms
+
+      reactive:
+
+    reactive-mode-settings:
+      trigger-tps-threshold: 18.0
+
+      untrigger-tps-threshold: 19.9
+
+      untrigger-settings:
+        minimum-cycles-before-undo: 10
+
+        maximum-undos-per-cycle: 40
+
+        entity-undo-weight:
+          default: 1
+          villager: 5
+
+    exclusion-settings:
+      tamed: true
+
+      named: true
+
+      love-mode: true
+
+      leashed: true
+
+      younger-than: 0
+
+      type:
+
+      metadata:
+        - Elitemob # Elite mobs from the plugin EliteMobs.
+        - Elitemobs_NPC # NPCs from the plugin EliteMobs.
+        - Supermob # Super mobs from the plugin EliteMobs.
+        - infernalMetadata # Infernal mobs from the plugin InfernalMobs.
+        - NPC # NPCs from the plugin Citizens.
+        - shopkeeper # Shopkeepers from the plugin Shopkeepers.
+
+    action-settings:
+      undo-on:
+        default:
+          interact: false
+
+          damage: false
+
+          target: false
+
+        remove-ai:
+          interact: true
+
+          damage: true
+
+          target: true
+
+        remove-awareness:
+          interact: true
+
+          damage: true
+
+          target: true
+
+tps-tracker-settings:
+  collection-period: 1200
+
+  trim-outliers-to-within: 100.0
+
+paper-settings:
+  mspt-tracker-settings:
+    collection-period: 1200
+
+    trim-outliers-to-within: 100.0
+
+  world-settings:
+    default:
+      alternative-reactive-mode-settings:
+        use-alternative-settings: false
+
+        trigger-mspt-threshold: 47.0
+
+        untrigger-mspt-threshold: 40.0
