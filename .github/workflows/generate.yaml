@@ -1,5 +1,5 @@
 ---
-name: minecraft-configs
+name: generate
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
     - cron: "0 */6 * * *"
 
 jobs:
-  get-configs:
+  paper:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

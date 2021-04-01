@@ -1,0 +1,40 @@
+---
+name: patch
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tags:
+      - "*"
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+          fetch-depth: 1
+      - name: Bootstrap
+        run: |
+          sudo wget -L https://github.com/mikefarah/yq/releases/download/3.4.1/yq_linux_amd64 -O /usr/local/bin/yq
+          sudo chmod +x /usr/local/bin/yq
+      - name: Patch
+        run: |
+          cd ${{ github.workspace }}/config/paper/
+          for file in $(find * -type f); do yq m -xi ../../base/paper/${file} ${file}; done
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: minecraft-configs
+          title: "chore(final): merge paper patches with base [ci-skip]"
+          signoff: true
+          committer: "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+          author: "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+          commit-message: "chore(deps): update default minecraft configs"
+          labels: minecraft/configs
+          body: |
+            Signed-off-by: Chip Wolf <chipwolf@users.noreply.github.com>
