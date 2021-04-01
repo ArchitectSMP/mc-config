@@ -1,9 +1,9 @@
 actions:
   '180':
-  - messages:prevent
+    - messages:prevent
   '240':
-  - setAfk
-  - messages:protected
+    - setAfk
+    - messages:protected
 messages:
   prefix: ''
 broadcasts:
