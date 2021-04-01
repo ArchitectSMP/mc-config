@@ -1,11 +1,11 @@
-donation-key: 
+donation-key:
 use-mysql: false
 table-prefix: co_
 mysql-host: 127.0.0.1
 mysql-port: 3306
 mysql-database: database
 mysql-username: root
-mysql-password: 
+mysql-password:
 check-updates: true
 api-enabled: true
 verbose: true
