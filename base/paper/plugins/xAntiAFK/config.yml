@@ -3,34 +3,34 @@ checkOp: false
 afkOnJoin: false
 actions:
   '180':
-  - messages:prevent
+    - messages:prevent
   '240':
-  - setAfk
-  - messages:protected
+    - setAfk
+    - messages:protected
   '360':
-  - commands:kick
+    - commands:kick
 events:
   onAfk:
     teleport: false
     location: world,x,y,z
     noDamage: true
     actions:
-    - broadcasts:nowafk
+      - broadcasts:nowafk
   noLonger:
     tpToBackLoc: false
     actions:
-    - broadcasts:nolonger
+      - broadcasts:nolonger
 internalMessages:
   reload: '&aConfiguration reloaded.'
   nopermission: '&cYou don''t have the permission to do that.'
   nohurt: '&cYou can''t hurt an AFK player'
   playernotfound: '&cPlayer ''&e%player%&c'' not found.'
 messages:
-  prefix: '&4[&fx&c&lAntiAFK&4]&f '
+  prefix: ''
   prevent: '&6Looks like you''re AFK...'
   protected: '&6You''re now protected.'
 broadcasts:
-  prefix: '&4[&fx&c&lAntiAFK&4]&f '
+  prefix: ''
   nowafk: '&e%player% &6is now AFK'
   nolonger: '&e%player% &6is no longer AFK'
 commands:
@@ -42,6 +42,6 @@ permissions:
 placeholders:
   status:
     default: ''
-    afk: ' &4[&cAFK&4]'
+    afk: '&4[&cAFK&4]&r '
 disableMetrics: false
 disableVersionCheck: false

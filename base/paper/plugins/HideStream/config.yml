@@ -13,8 +13,8 @@ Join:
     HideOnlyIfHasPermission: false
     HideOnlyIfWithoutPermission: false
   AffectedWorlds:
-  - world
-  - world_the_end
+    - world
+    - world_the_end
 Quit:
   HideQuit: true
   NeedsToBeOnline: 0
@@ -25,8 +25,8 @@ Quit:
     HideOnlyIfHasPermission: false
     HideOnlyIfWithoutPermission: false
   AffectedWorlds:
-  - world
-  - world_the_end
+    - world
+    - world_the_end
 Kick:
   HideKick: true
   NeedsToBeOnline: 0
@@ -37,15 +37,15 @@ Kick:
     HideOnlyIfHasPermission: false
     HideOnlyIfWithoutPermission: false
   AffectedWorlds:
-  - world
-  - world_the_end
+    - world
+    - world_the_end
 Death:
-  HideDeath: true
+  HideDeath: false
   NeedsToBeOnline: 0
   Permissions:
     UsePermissions: false
     HideOnlyIfHasPermission: false
     HideOnlyIfWithoutPermission: false
   AffectedWorlds:
-  - world
-  - world_the_end
+    - world
+    - world_the_end
