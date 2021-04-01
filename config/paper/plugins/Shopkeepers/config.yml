@@ -4,65 +4,65 @@ register-world-guard-allow-shop-flag: false
 deleting-player-shop-returns-creation-item: true
 require-container-recently-placed: false
 enabled-living-shops:
-- VILLAGER
-- COW
-- MUSHROOM_COW
-- SHEEP
-- PIG
-- CHICKEN
-- OCELOT
-- RABBIT
-- WOLF
-- SNOWMAN
-- IRON_GOLEM
-- POLAR_BEAR
-- BLAZE
-- SILVERFISH
-- SKELETON
-- STRAY
-- WITHER_SKELETON
-- SPIDER
-- CAVE_SPIDER
-- CREEPER
-- WITCH
-- ENDERMAN
-- ZOMBIE
-- ZOMBIE_VILLAGER
-- HUSK
-- SLIME
-- MAGMA_CUBE
-- SQUID
-- HORSE
-- MULE
-- DONKEY
-- SKELETON_HORSE
-- ZOMBIE_HORSE
-- EVOKER
-- VEX
-- VINDICATOR
-- ILLUSIONER
-- PARROT
-- TURTLE
-- PHANTOM
-- COD
-- SALMON
-- PUFFERFISH
-- TROPICAL_FISH
-- DROWNED
-- DOLPHIN
-- CAT
-- PANDA
-- PILLAGER
-- LLAMA
-- TRADER_LLAMA
-- WANDERING_TRADER
-- FOX
-- BEE
-- ZOMBIFIED_PIGLIN
-- PIGLIN
-- HOGLIN
-- ZOGLIN
-- STRIDER
+  - VILLAGER
+  - COW
+  - MUSHROOM_COW
+  - SHEEP
+  - PIG
+  - CHICKEN
+  - OCELOT
+  - RABBIT
+  - WOLF
+  - SNOWMAN
+  - IRON_GOLEM
+  - POLAR_BEAR
+  - BLAZE
+  - SILVERFISH
+  - SKELETON
+  - STRAY
+  - WITHER_SKELETON
+  - SPIDER
+  - CAVE_SPIDER
+  - CREEPER
+  - WITCH
+  - ENDERMAN
+  - ZOMBIE
+  - ZOMBIE_VILLAGER
+  - HUSK
+  - SLIME
+  - MAGMA_CUBE
+  - SQUID
+  - HORSE
+  - MULE
+  - DONKEY
+  - SKELETON_HORSE
+  - ZOMBIE_HORSE
+  - EVOKER
+  - VEX
+  - VINDICATOR
+  - ILLUSIONER
+  - PARROT
+  - TURTLE
+  - PHANTOM
+  - COD
+  - SALMON
+  - PUFFERFISH
+  - TROPICAL_FISH
+  - DROWNED
+  - DOLPHIN
+  - CAT
+  - PANDA
+  - PILLAGER
+  - LLAMA
+  - TRADER_LLAMA
+  - WANDERING_TRADER
+  - FOX
+  - BEE
+  - ZOMBIFIED_PIGLIN
+  - PIGLIN
+  - HOGLIN
+  - ZOGLIN
+  - STRIDER
 disable-gravity: true
 silence-living-shop-entities: false
 enable-citizen-shops: false

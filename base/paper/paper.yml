@@ -93,35 +93,35 @@ world-settings:
     allow-using-signs-inside-spawn-protection: false
     per-player-mob-spawns: false
     max-auto-save-chunks-per-tick: 24
+    keep-spawn-loaded-range: 10
     seed-based-feature-search: true
-    grass-spread-tick-rate: 1
     water-over-lava-flow-speed: 5
+    grass-spread-tick-rate: 1
     use-faster-eigencraft-redstone: false
-    nether-ceiling-void-damage-height: 0
     only-players-collide: false
     allow-vehicle-collisions: true
+    nether-ceiling-void-damage-height: 0
     allow-non-player-entities-on-scoreboards: false
     portal-search-radius: 128
     portal-create-radius: 16
     portal-search-vanilla-dimension-scaling: true
+    parrots-are-unaffected-by-player-movement: false
+    disable-explosion-knockback: false
+    fix-climbing-bypassing-cramming-rule: false
+    keep-spawn-loaded: true
     armor-stands-do-collision-entity-lookups: true
     container-update-tick-rate: 1
-    keep-spawn-loaded: true
-    parrots-are-unaffected-by-player-movement: false
-    keep-spawn-loaded-range: 10
     disable-thunder: false
     skeleton-horse-thunder-spawn-chance: 0.01
     disable-ice-and-snow: false
-    disable-explosion-knockback: false
-    fix-climbing-bypassing-cramming-rule: false
     prevent-tnt-from-moving-in-water: false
-    max-leash-distance: 10.0
     iron-golems-can-spawn-in-air: false
+    max-leash-distance: 10.0
     armor-stands-tick: true
     non-player-arrow-despawn-rate: -1
     creative-arrow-despawn-rate: -1
-    entities-target-with-follow-range: false
     spawner-nerfed-mobs-should-jump: false
+    entities-target-with-follow-range: false
     zombies-target-turtle-eggs: true
     zombie-villager-infection-chance: -1.0
     all-chunks-are-slime-chunks: false
@@ -134,11 +134,11 @@ world-settings:
       scan-for-legacy-ender-dragon: true
       disable-pillager-patrols: false
       fix-curing-zombie-villager-discount-exploit: true
+      disable-end-credits: false
       disable-chest-cat-detection: false
       nerf-pigmen-from-nether-portals: false
       disable-player-crits: false
       disable-sprint-interruption-on-attack: false
-      disable-end-credits: false
       shield-blocking-delay: 5
       disable-unloaded-chunk-enderpearl-exploit: true
       disable-relative-projectile-velocity: false
@@ -206,8 +206,6 @@ world-settings:
       vindicator:
       - NORMAL
       - HARD
-    viewdistances:
-      no-tick-view-distance: -1
     anti-xray:
       enabled: false
       engine-mode: 1
@@ -231,6 +229,8 @@ world-settings:
       replacement-blocks:
       - stone
       - oak_planks
+    viewdistances:
+      no-tick-view-distance: -1
     squid-spawn-height:
       maximum: 0.0
     generator-settings:
