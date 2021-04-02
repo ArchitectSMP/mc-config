@@ -1,4 +1,25 @@
 config-version: 12
+settings:
+  debug: false
+  bungeecord: false
+  sample-count: 12
+  player-shuffle: 0
+  user-cache-size: 1000
+  save-user-cache-on-stop-only: false
+  moved-wrongly-threshold: 0.0625
+  moved-too-quickly-multiplier: 10.0
+  log-villager-deaths: true
+  timeout-time: 60
+  restart-on-crash: true
+  restart-script: ./start.sh
+  netty-threads: 4
+  attribute:
+    maxHealth:
+      max: 2048.0
+    movementSpeed:
+      max: 2048.0
+    attackDamage:
+      max: 2048.0
 messages:
   whitelist: You are not whitelisted on this server!
   unknown-command: Unknown command. Type "/help" for help.
@@ -25,27 +46,6 @@ commands:
   - summon
   - testforblock
   - tellraw
-settings:
-  bungeecord: false
-  sample-count: 12
-  player-shuffle: 0
-  user-cache-size: 1000
-  save-user-cache-on-stop-only: false
-  moved-wrongly-threshold: 0.0625
-  moved-too-quickly-multiplier: 10.0
-  log-villager-deaths: true
-  timeout-time: 60
-  restart-on-crash: true
-  restart-script: ./start.sh
-  netty-threads: 4
-  debug: false
-  attribute:
-    maxHealth:
-      max: 2048.0
-    movementSpeed:
-      max: 2048.0
-    attackDamage:
-      max: 2048.0
 players:
   disable-saving: false
 world-settings:
@@ -73,8 +73,8 @@ world-settings:
     seed-portal: 34222645
     max-tnt-per-tick: 100
     enable-zombie-pigmen-portal-spawns: true
-    view-distance: default
     item-despawn-rate: 6000
+    view-distance: default
     wither-spawn-sound-radius: 0
     arrow-despawn-rate: 1200
     trident-despawn-rate: 1200
@@ -84,6 +84,9 @@ world-settings:
     mob-spawn-range: 8
     end-portal-sound-radius: 0
     max-entity-collisions: 8
+    merge-radius:
+      exp: 3.0
+      item: 2.5
     growth:
       cactus-modifier: 100
       cane-modifier: 100
@@ -142,9 +145,6 @@ world-settings:
       entity: 50
     squid-spawn-range:
       min: 45.0
-    merge-radius:
-      exp: 3.0
-      item: 2.5
     entity-tracking-range:
       players: 48
       animals: 48

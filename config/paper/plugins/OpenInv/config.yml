@@ -1,9 +1,0 @@
-toggles:
-  silent-chest:
-    64586ccf-d7e1-4ec6-86cf-ca0882d6a262: false
-    8df8b64c-4f3a-4df4-a659-85d6db241be1: false
-    88960757-cb1c-4478-9cfc-58a6c928c6ba: false
-    7b7c1dc0-1e75-4d3f-8dc8-296d75c3dc3d: false
-    1dae4e3d-99f6-44d0-87da-83c457752738: false
-  any-chest:
-    88960757-cb1c-4478-9cfc-58a6c928c6ba: true
