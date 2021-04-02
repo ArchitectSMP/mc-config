@@ -4,10 +4,8 @@ name: patch
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-    tags:
-      - "*"
+    paths:
+      - "config/**"
 
 jobs:
   paper:

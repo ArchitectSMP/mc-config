@@ -9,6 +9,8 @@ on:
 jobs:
   paper:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ${{ github.workspace }}/base/paper/
     steps:
       - uses: actions/checkout@v2
         with:
@@ -16,11 +18,9 @@ jobs:
           fetch-depth: 1
       - name: Bootstrap
         run: |
-          sudo wget -L https://github.com/mikefarah/yq/releases/download/3.4.1/yq_linux_amd64 -O /usr/local/bin/yq
+          sudo wget -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
-          rm -rf ${{ github.workspace }}/base/paper/
-          mkdir -p ${{ github.workspace }}/base/paper/plugins
-          rsync -aiP ${{ github.workspace }}/plugins/paper/ ${{ github.workspace }}/base/paper/plugins/
+        working-directory: ${{ env.working-directory }}
       - uses: addnab/docker-run-action@v2
         continue-on-error: true
         timeout-minutes: 3
@@ -38,10 +38,10 @@ jobs:
             killall java
       - name: Cleanup
         run: |
-          sudo find ${{ github.workspace }}/base/paper/ -type f -name "*.jar" -delete
-          find ${{ github.workspace }}/base/paper/ -type f -exec sed -i -e '/^[ \t]*#/d; /^[[:space:]]*$/d; s/[[:blank:]]*$//' {} +
-          cd ${{ github.workspace }}/config/paper/
-          for file in $(find * -type f); do yq r -P ${file} > ${file}; done
+          sudo find . -type f -name "*.jar" -delete
+          find . -type f -exec sed -i -e '/^[ \t]*#/d; /^[[:space:]]*$/d; s/[[:blank:]]*$//' {} +
+          for file in $(find . -type f); do yq e -P <(cat ${file}) > ${file}; done
+        working-directory: ${{ env.working-directory }}
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
