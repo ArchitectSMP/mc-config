@@ -84,6 +84,9 @@ world-settings:
     mob-spawn-range: 8
     end-portal-sound-radius: 0
     max-entity-collisions: 8
+    merge-radius:
+      exp: 3.0
+      item: 2.5
     growth:
       cactus-modifier: 100
       cane-modifier: 100
@@ -142,9 +145,6 @@ world-settings:
       entity: 50
     squid-spawn-range:
       min: 45.0
-    merge-radius:
-      exp: 3.0
-      item: 2.5
     entity-tracking-range:
       players: 48
       animals: 48
