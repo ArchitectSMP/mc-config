@@ -14,6 +14,7 @@ Join:
     HideOnlyIfWithoutPermission: false
   AffectedWorlds:
   - world
+  - world_nether
   - world_the_end
 Quit:
   HideQuit: true
@@ -26,6 +27,7 @@ Quit:
     HideOnlyIfWithoutPermission: false
   AffectedWorlds:
   - world
+  - world_nether
   - world_the_end
 Kick:
   HideKick: true
@@ -38,6 +40,7 @@ Kick:
     HideOnlyIfWithoutPermission: false
   AffectedWorlds:
   - world
+  - world_nether
   - world_the_end
 Death:
   HideDeath: true
@@ -48,4 +51,5 @@ Death:
     HideOnlyIfWithoutPermission: false
   AffectedWorlds:
   - world
+  - world_nether
   - world_the_end
