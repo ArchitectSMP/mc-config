@@ -5,12 +5,12 @@ settings:
   use-alternative-luck-formula: false
   load-permissions-yml-before-plugins: true
   bungee-online-mode: true
-  suggest-player-names-when-null-tab-completions: true
-  console-has-all-permissions: false
   region-file-cache-size: 256
   incoming-packet-spam-threshold: 300
+  console-has-all-permissions: false
   max-joins-per-tick: 3
   track-plugin-scoreboards: false
+  suggest-player-names-when-null-tab-completions: true
   fix-entity-position-desync: true
   chunk-tasks-per-tick: 1000
   enable-player-collisions: true
@@ -21,6 +21,13 @@ settings:
     enabled: false
     online-mode: false
     secret: ""
+  unsupported-settings:
+    allow-headless-pistons: false
+    allow-permanent-block-break-exploits: false
+    allow-piston-duplication: false
+    allow-headless-pistons-readme: This setting controls if players should be able to create headless pistons.
+    allow-permanent-block-break-exploits-readme: This setting controls if players should be able to break bedrock, end portals and other intended to be permanent blocks.
+    allow-piston-duplication-readme: This setting controls if player should be able to use TNT duplication, but this also allows duplicating carpet, rails and potentially other items
   watchdog:
     early-warning-every: 5000
     early-warning-delay: 10000
@@ -32,22 +39,15 @@ settings:
   book-size:
     page-max: 2560
     total-multiplier: 0.98
-  unsupported-settings:
-    allow-headless-pistons: false
-    allow-permanent-block-break-exploits: false
-    allow-piston-duplication: false
-    allow-headless-pistons-readme: This setting controls if players should be able to create headless pistons.
-    allow-permanent-block-break-exploits-readme: This setting controls if players should be able to break bedrock, end portals and other intended to be permanent blocks.
-    allow-piston-duplication-readme: This setting controls if player should be able to use TNT duplication, but this also allows duplicating carpet, rails and potentially other items
   async-chunks:
     threads: -1
 messages:
   no-permission: '&cI''m sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.'
   kick:
-    flying-player: Flying is not enabled on this server
-    flying-vehicle: Flying is not enabled on this server
     authentication-servers-down: ""
     connection-throttle: Connection throttled! Please wait before reconnecting.
+    flying-player: Flying is not enabled on this server
+    flying-vehicle: Flying is not enabled on this server
 timings:
   enabled: true
   verbose: true
@@ -61,10 +61,10 @@ timings:
   server-name: Unknown Server
 world-settings:
   default:
-    delay-chunk-unloads-by: 10s
     disable-teleportation-suffocation-check: false
-    fixed-chunk-inhabited-time: -1
+    delay-chunk-unloads-by: 10s
     remove-corrupt-tile-entities: false
+    fixed-chunk-inhabited-time: -1
     prevent-moving-into-unloaded-chunks: false
     allow-using-signs-inside-spawn-protection: false
     per-player-mob-spawns: false
@@ -87,11 +87,9 @@ world-settings:
     phantoms-only-attack-insomniacs: true
     update-pathfinding-on-block-update: true
     fix-wither-targeting-bug: false
-    iron-golems-can-spawn-in-air: false
-    max-leash-distance: 10.0
     seed-based-feature-search: true
-    grass-spread-tick-rate: 1
     water-over-lava-flow-speed: 5
+    grass-spread-tick-rate: 1
     use-faster-eigencraft-redstone: false
     nether-ceiling-void-damage-height: 0
     only-players-collide: false
@@ -102,15 +100,17 @@ world-settings:
     portal-search-vanilla-dimension-scaling: true
     parrots-are-unaffected-by-player-movement: false
     disable-explosion-knockback: false
-    keep-spawn-loaded: true
     disable-thunder: false
     skeleton-horse-thunder-spawn-chance: 0.01
     disable-ice-and-snow: false
     keep-spawn-loaded-range: 10
-    container-update-tick-rate: 1
+    keep-spawn-loaded: true
     armor-stands-do-collision-entity-lookups: true
+    container-update-tick-rate: 1
     fix-climbing-bypassing-cramming-rule: false
     prevent-tnt-from-moving-in-water: false
+    iron-golems-can-spawn-in-air: false
+    max-leash-distance: 10.0
     armor-stands-tick: true
     non-player-arrow-despawn-rate: -1
     creative-arrow-despawn-rate: -1
@@ -200,6 +200,8 @@ world-settings:
       vindicator:
         - NORMAL
         - HARD
+    viewdistances:
+      no-tick-view-distance: -1
     anti-xray:
       enabled: false
       engine-mode: 1
@@ -223,8 +225,6 @@ world-settings:
       replacement-blocks:
         - stone
         - oak_planks
-    viewdistances:
-      no-tick-view-distance: -1
     squid-spawn-height:
       maximum: 0.0
     generator-settings:
