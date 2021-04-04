@@ -41,11 +41,9 @@ jobs:
       - name: Cleanup
         run: |
           find . -type f -exec sed -i -e '/^[ \t]*#/d; /^[[:space:]]*$/d; s/[[:blank:]]*$//' {} +
-          find . -type f -name "*.jar" -o -empty -delete
         working-directory: ${{ env.base-directory }}
       - name: Merge
         run: |
-          set -x
           for f in $(find * -type f -name "*.yml" -o -name "*.yaml" -o -name "*.txt"); do
             echo $f && mkdir -p $(dirname "${{ env.base-directory }}/${f}")
             yq e -MPI2 "${f}" > "${{ env.base-directory }}/${f}"
