@@ -20,7 +20,6 @@ jobs:
         run: |
           sudo wget -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
-        working-directory: ${{ env.working-directory }}
       - uses: addnab/docker-run-action@v2
         continue-on-error: true
         timeout-minutes: 3
@@ -28,7 +27,8 @@ jobs:
           image: itzg/minecraft-server:latest
           shell: bash
           options: |
-            -v ${{ github.workspace }}/base/paper:/data
+            -v ${{ env.working-directory }}:/data
+            -v ${{ github.workspace }}/plugins/paper:/plugins
             -e UID=1001 -e GID=116 -e EULA=TRUE
             -e MAX_TICK_TIME=1 -e MAX_WORLD_SIZE=1
             -e VERSION=1.16.5 -e TYPE=PAPER
@@ -38,9 +38,9 @@ jobs:
             killall java
       - name: Cleanup
         run: |
-          sudo find . -type f -name "*.jar" -delete
           find . -type f -exec sed -i -e '/^[ \t]*#/d; /^[[:space:]]*$/d; s/[[:blank:]]*$//' {} +
-          for file in $(find . -type f); do yq e -P <(cat ${file}) > ${file}; done
+          find . -type f -name "*.yml" -o -name "*.yaml" -o -name "*.txt" -exec yq e -iMPI2 {} + || true
+          find . -type f -name "*.jar" -o -empty -delete
         working-directory: ${{ env.working-directory }}
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
