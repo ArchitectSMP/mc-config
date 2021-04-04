@@ -94,8 +94,8 @@ world-settings:
     update-pathfinding-on-block-update: true
     fix-wither-targeting-bug: false
     seed-based-feature-search: true
-    water-over-lava-flow-speed: 5
     grass-spread-tick-rate: 1
+    water-over-lava-flow-speed: 5
     use-faster-eigencraft-redstone: false
     nether-ceiling-void-damage-height: 0
     only-players-collide: false
@@ -106,26 +106,26 @@ world-settings:
     portal-search-vanilla-dimension-scaling: true
     parrots-are-unaffected-by-player-movement: false
     disable-explosion-knockback: false
+    fix-climbing-bypassing-cramming-rule: false
+    armor-stands-do-collision-entity-lookups: true
+    keep-spawn-loaded: true
+    container-update-tick-rate: 1
     disable-thunder: false
     skeleton-horse-thunder-spawn-chance: 0.01
     disable-ice-and-snow: false
     keep-spawn-loaded-range: 10
-    keep-spawn-loaded: true
-    armor-stands-do-collision-entity-lookups: true
-    container-update-tick-rate: 1
-    fix-climbing-bypassing-cramming-rule: false
     prevent-tnt-from-moving-in-water: false
     iron-golems-can-spawn-in-air: false
     max-leash-distance: 10.0
-    mob-spawner-tick-rate: 1
-    all-chunks-are-slime-chunks: false
     armor-stands-tick: true
     non-player-arrow-despawn-rate: -1
     creative-arrow-despawn-rate: -1
     spawner-nerfed-mobs-should-jump: false
     entities-target-with-follow-range: false
-    zombie-villager-infection-chance: -1.0
     zombies-target-turtle-eggs: true
+    zombie-villager-infection-chance: -1.0
+    all-chunks-are-slime-chunks: false
+    mob-spawner-tick-rate: 1
     enable-treasure-maps: true
     treasure-maps-return-already-discovered: false
     light-queue-size: 20
@@ -206,8 +206,6 @@ world-settings:
       vindicator:
       - NORMAL
       - HARD
-    viewdistances:
-      no-tick-view-distance: -1
     anti-xray:
       enabled: false
       engine-mode: 1
@@ -231,6 +229,8 @@ world-settings:
       replacement-blocks:
       - stone
       - oak_planks
+    viewdistances:
+      no-tick-view-distance: -1
     squid-spawn-height:
       maximum: 0.0
     generator-settings:
