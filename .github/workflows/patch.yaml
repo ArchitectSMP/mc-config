@@ -29,15 +29,12 @@ jobs:
             yq eval-all -iMPI2 'select(fileIndex == 0) * select(fileIndex == 1)' ${{ env.base-directory }}/${f} ${f}
           done
         working-directory: ${{ env.overlay-directory }}
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v3
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
         with:
+          filename: "paper.zip"
+          path: base/paper
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "paper.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: minecraft-configs
-          title: "chore(final): merge paper patches with base [ci-skip]"
-          signoff: true
-          committer: "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
-          author: "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
-          labels: minecraft/configs
-          body: |
-            Signed-off-by: Chip Wolf <chipwolf@users.noreply.github.com>
