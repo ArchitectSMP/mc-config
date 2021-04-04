@@ -1,7 +1,7 @@
 ConfigVersion: 1.21.3
-BotToken: BOTTOKEN
+BotToken: ${CFG_DISCORDSRV_BOT_TOKEN}
 Channels:
-  global: "000000000000000000"
+  global: "794341084632711188"
 DiscordConsoleChannelId: "000000000000000000"
 DiscordInviteLink: discord.gg/changethisintheconfig.yml
 DebugLevel: 0

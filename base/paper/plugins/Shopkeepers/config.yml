@@ -3,24 +3,24 @@ debug: false
 debug-options: []
 enable-metrics: true
 file-encoding: UTF-8
-save-instantly: true
+save-instantly: false
 convert-player-items: false
 convert-all-player-items: true
 convert-player-items-exceptions: []
 enable-spawn-verifier: false
-bypass-spawn-blocking: true
+bypass-spawn-blocking: false
 check-shop-interaction-result: false
 enable-world-guard-restrictions: false
 require-world-guard-allow-shop-flag: false
-register-world-guard-allow-shop-flag: true
+register-world-guard-allow-shop-flag: false
 enable-towny-restrictions: false
 shop-creation-item:
   type: VILLAGER_SPAWN_EGG
   display-name: '&aShopkeeper'
 prevent-shop-creation-item-regular-usage: true
-deleting-player-shop-returns-creation-item: false
+deleting-player-shop-returns-creation-item: true
 create-player-shop-with-command: false
-require-container-recently-placed: true
+require-container-recently-placed: false
 max-container-distance: 15
 max-shops-per-player: 0
 max-shops-perm-options: 5,15,25
@@ -54,8 +54,6 @@ enabled-living-shops:
   - ZOMBIE
   - ZOMBIE_VILLAGER
   - HUSK
-  - GIANT
-  - GHAST
   - SLIME
   - MAGMA_CUBE
   - SQUID
@@ -80,7 +78,6 @@ enabled-living-shops:
   - CAT
   - PANDA
   - PILLAGER
-  - RAVAGER
   - LLAMA
   - TRADER_LLAMA
   - WANDERING_TRADER
@@ -91,16 +88,16 @@ enabled-living-shops:
   - HOGLIN
   - ZOGLIN
   - STRIDER
-disable-gravity: false
+disable-gravity: true
 gravity-chunk-range: 4
-silence-living-shop-entities: true
+silence-living-shop-entities: false
 show-nameplates: true
 always-show-nameplates: false
 nameplate-prefix: '&a'
-enable-citizen-shops: true
+enable-citizen-shops: false
 enable-sign-shops: true
 enable-sign-post-shops: true
-sign-shop-first-line: '[SHOP]'
+sign-shop-first-line: '[CLICK TO SHOP]'
 name-regex: '[A-Za-z0-9 ]{3,25}'
 naming-of-player-shops-via-item: false
 allow-renaming-of-player-npc-shops: false
@@ -121,8 +118,8 @@ hire-other-villagers: false
 disable-wandering-traders: false
 block-wandering-trader-spawns: false
 hire-wandering-traders: false
-edit-regular-villagers: true
-edit-regular-wandering-traders: true
+edit-regular-villagers: false
+edit-regular-wandering-traders: false
 hire-item: EMERALD
 hire-other-villagers-costs: 1
 for-hire-title: For Hire
@@ -134,9 +131,9 @@ enable-purchase-logging: false
 increment-villager-statistics: false
 tax-rate: 0
 tax-round-up: false
-currency-item: EMERALD
+currency-item: DIAMOND
 zero-currency-item: BARRIER
-high-currency-item: EMERALD_BLOCK
+high-currency-item: DIAMOND_BLOCK
 zero-high-currency-item: BARRIER
 high-currency-value: 9
 high-currency-min-cost: 20

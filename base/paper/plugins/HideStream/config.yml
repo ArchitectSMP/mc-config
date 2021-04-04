@@ -43,7 +43,7 @@ Kick:
     - world_nether
     - world_the_end
 Death:
-  HideDeath: true
+  HideDeath: false
   NeedsToBeOnline: 0
   Permissions:
     UsePermissions: false

@@ -1,7 +1,7 @@
 InvisibilityFeatures:
   NightVisionEffect: true
   DisableDamage: true
-  DisableHunger: true
+  DisableHunger: false
   DisableMobTarget: true
   DisablePreventBlockPlacement: true
   RequireChatMessageSuffix: /
@@ -10,7 +10,7 @@ InvisibilityFeatures:
   OpenPlayerInventoryOnRightClick: true
   AllowSpectatorInventoryEdit: true
   DisablePressurePlates: true
-  DisablePush: false
+  DisablePush: true
   HideInTablist: true
   ResetShowInTabOnQuit: true
   HideInGame: true
@@ -22,7 +22,7 @@ InvisibilityFeatures:
     /examplemsg1 <vanished>: '&cPlayer not found'
   DisableEnvironmentalDamageAfterReappear: 5
   SetSleepingIgnored: true
-  SwitchGamemode: true
+  SwitchGamemode: false
 VanishStateFeatures:
   AutoVanishOnJoin: false
   ReappearOnWorldChange: false
@@ -53,7 +53,7 @@ SurvivalFriendlyFeatures:
       AnotherExampleWorld2: SURVIVAL
     ReApplyGameModeChangeOnWorldChange: true
     ReApplyGameModeChangeOnJoin: true
-    AlwaysApplyOnJoinVanished: true
+    AlwaysApplyOnJoinVanished: false
   Location:
     TeleportBackOnReappear: false
 MessageOptions:
@@ -91,7 +91,7 @@ ExternalInvisibility:
     AdjustAmountOfOnlinePlayers: true
     AdjustListOfLoggedInPlayers: true
 ScoreboardOptions:
-  Enable: true
+  Enable: false
   Permission: false
   Sidebar:
     ScoreboardHeader: '&6>       PremiumVanish       <'
@@ -113,22 +113,22 @@ ScoreboardOptions:
     TargetOnRightClick: true
     TargetGlows: true
 HookOptions:
-  EnableEssentialsHook: true
-  EnableDynmapHook: true
-  DynmapSendJoinLeaveMessages: true
-  EnableLibsDisguisesHook: true
-  EnableDisguiseCraftHook: true
-  EnableTrailGUIHook: true
-  EnableSuperTrailsHook: true
+  EnableEssentialsHook: false
+  EnableDynmapHook: false
+  DynmapSendJoinLeaveMessages: false
+  EnableLibsDisguisesHook: false
+  EnableDisguiseCraftHook: false
+  EnableTrailGUIHook: false
+  EnableSuperTrailsHook: false
   EnablePlaceholderAPIHook: true
-  EnableMVdWPlaceholderAPIHook: true
-  EnableCitizensHook: true
-  EnableCustomParticleEffectsHook: true
-  EnableNametagEditHook: true
-  EnableFeatherBoardHook: true
-  EnableEnjinMinecraftPluginHook: true
-  EnableCMIHook: true
-  EnableDiscordSRVHook: true
+  EnableMVdWPlaceholderAPIHook: false
+  EnableCitizensHook: false
+  EnableCustomParticleEffectsHook: false
+  EnableNametagEditHook: false
+  EnableFeatherBoardHook: false
+  EnableEnjinMinecraftPluginHook: false
+  EnableCMIHook: false
+  EnableDiscordSRVHook: false
 InvisibilityMethod:
   PlayerHider: Hybrid
   Advanced:
@@ -142,16 +142,16 @@ CompatibilityOptions:
   PlayerCommandPreprocessEventPriority: HIGH
 MiscellaneousOptions:
   Bungeecord:
-    Enable: false
-    Ip: ""
+    Enable: true
+    Ip: minecraft-database-mariadb
     Port: "3306"
     CustomURI: ""
-    User: ""
-    Password: ""
-    Database: ""
+    User: root
+    Password: architectsmp
+    Database: architectsmp
     BasicDatabaseConnector: false
   AntiSpam:
-    AntiSpamCheck: true
+    AntiSpamCheck: false
     AntiSpamDelay: 1
     AlwaysCoverVanish: false
   Command:

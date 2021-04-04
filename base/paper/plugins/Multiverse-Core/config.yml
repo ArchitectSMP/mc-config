@@ -1,7 +1,7 @@
 multiverse-configuration:
   ==: com.onarandombox.MultiverseCore.MultiverseCoreConfiguration
   enforceaccess: "false"
-  prefixchat: "true"
+  prefixchat: "false"
   prefixchatformat: '[%world%]%chat%'
   useasyncchat: "true"
   teleportintercept: "true"
@@ -16,4 +16,4 @@ multiverse-configuration:
   defaultportalsearch: "false"
   portalsearchradius: "128"
   autopurge: "true"
-  idonotwanttodonate: "false"
+  idonotwanttodonate: "true"
