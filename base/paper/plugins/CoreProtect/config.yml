@@ -1,11 +1,11 @@
 donation-key:
-use-mysql: false
+use-mysql: true
 table-prefix: co_
-mysql-host: 127.0.0.1
+mysql-host: minecraft-database-mariadb
 mysql-port: 3306
-mysql-database: database
+mysql-database: architectsmp
 mysql-username: root
-mysql-password:
+mysql-password: architectsmp
 check-updates: true
 api-enabled: true
 verbose: true
@@ -44,3 +44,5 @@ player-commands: true
 player-sessions: true
 username-changes: true
 worldedit: true
+test:
+  lol: bar

@@ -1,6 +1,13 @@
 deftemplatesuffix: hires
 storage:
-  type: filetree
+  type: mysql
+  hostname: minecraft-database-mariadb
+  port: 3306
+  database: architectsmp
+  userid: root
+  password: architectsmp
+  prefix: dm_
+  flags: ?allowReconnect=true
 components:
   - class: org.dynmap.ClientConfigurationComponent
   - class: org.dynmap.InternalClientUpdateComponent
@@ -32,21 +39,21 @@ components:
     default-sign-set: markers
     showspawn: true
     spawnicon: world
-    spawnlabel: "Spawn"
+    spawnlabel: Spawn
     showofflineplayers: false
-    offlinelabel: "Offline"
+    offlinelabel: Offline
     offlineicon: offlineuser
     offlinehidebydefault: true
     offlineminzoom: 0
     maxofflinetime: 30
     showspawnbeds: false
-    spawnbedlabel: "Spawn Beds"
+    spawnbedlabel: Spawn Beds
     spawnbedicon: bed
     spawnbedhidebydefault: true
     spawnbedminzoom: 0
-    spawnbedformat: "%name%'s bed"
+    spawnbedformat: '%name%''s bed'
     showworldborder: true
-    worldborderlabel: "Border"
+    worldborderlabel: Border
   - class: org.dynmap.ClientComponent
     type: chat
     allowurlname: false
@@ -66,7 +73,7 @@ components:
     smallplayerfaces: false
     hidebydefault: false
     layerprio: 0
-    label: "Players"
+    label: Players
   - class: org.dynmap.ClientComponent
     type: link
   - class: org.dynmap.ClientComponent
@@ -75,7 +82,7 @@ components:
     showweather: true
   - class: org.dynmap.ClientComponent
     type: coord
-    label: "Location"
+    label: Location
     hidey: false
     show-mcr: false
     show-chunk: false
@@ -100,7 +107,7 @@ correct-water-lighting: true
 transparent-leaves: true
 ctm-support: true
 custom-colors-support: true
-skin-url: "http://skins.minecraft.net/MinecraftSkins/%player%.png"
+skin-url: http://skins.minecraft.net/MinecraftSkins/%player%.png
 render-triggers:
   - blockplaced
   - blockbreak
@@ -138,12 +145,12 @@ grayplayerswhenhidden: true
 player-sort-permission-nodes:
   - bukkit.command.op
 trusted-proxies:
-  - "127.0.0.1"
-  - "0:0:0:0:0:0:0:1"
-joinmessage: "%playername% joined"
-quitmessage: "%playername% quit"
-spammessage: "You may only chat once every %interval% seconds."
-webmsgformat: "&color;2[WEB] %playername%: &color;f%message%"
+  - 127.0.0.1
+  - 0:0:0:0:0:0:0:1
+joinmessage: '%playername% joined'
+quitmessage: '%playername% quit'
+spammessage: You may only chat once every %interval% seconds.
+webmsgformat: '&color;2[WEB] %playername%: &color;f%message%'
 showlayercontrol: true
 check-banned-ips: true
 defaultzoom: 0
@@ -153,17 +160,17 @@ persist-ids-by-ip: true
 cyrillic-support: false
 round-coordinates: true
 msg:
-    maptypes: "Map Types"
-    players: "Players"
-    chatrequireslogin: "Chat Requires Login"
-    chatnotallowed: "You are not permitted to send chat messages"
-    hiddennamejoin: "Player joined"
-    hiddennamequit: "Player quit"
+  maptypes: Map Types
+  players: Players
+  chatrequireslogin: Chat Requires Login
+  chatnotallowed: You are not permitted to send chat messages
+  hiddennamejoin: Player joined
+  hiddennamequit: Player quit
 url:
 custom-commands:
-    image-updates:
-        preupdatecommand: ""
-        postupdatecommand: ""
+  image-updates:
+    preupdatecommand: ""
+    postupdatecommand: ""
 snapshotcachesize: 500
 soft-ref-cache: true
 verbose: false

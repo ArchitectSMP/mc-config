@@ -1,17 +1,17 @@
-version: "1.9.6" #
-server_name: "UNNAMED_SERVER"
+version: 1.9.6 #
+server_name: UNNAMED_SERVER
 override_global_format: false
-override_global_format_format: "&5[&dG&5] &f%DISPLAYNAME%&f: "
+override_global_format_format: '&f%DISPLAYNAME%&f: '
 override_all_multichat_formatting: false
 force_multichat_format: false
 set_local_format: true
-local_chat_format: "&3[&bL&3] &f%DISPLAYNAME%&f: &7"
+local_chat_format: '&3[&bL&3] &f%DISPLAYNAME%&f: &7'
 multichat_placeholders:
-  nickname: "%NICK%"
-  papi_displayname: "%player_displayname%"
+  nickname: '%NICK%'
+  papi_displayname: '%player_displayname%'
 nickname_blacklist:
-- "(?i)Notch"
-- "(?i)Jeb"
+  - (?i)Notch
+  - (?i)Jeb
 show_nickname_prefix: false
 nickname_prefix: "~"
 nickname_length_limit: 20
@@ -25,15 +25,15 @@ mysql_user: ""
 mysql_pass: ""
 mysql_flags: []
 force_channel:
-  - regex: '^&f\[&3TC&f\].*'
+  - regex: ^&f\[&3TC&f\].*
     ignore_format_codes: false
-    channel: 'local'
-  - regex: '^&f\[&6NC&f\].*'
+    channel: local
+  - regex: ^&f\[&6NC&f\].*
     ignore_format_codes: false
-    channel: 'local'
-  - regex: '^&f\[&4ADMIN&f\].*'
+    channel: local
+  - regex: ^&f\[&4ADMIN&f\].*
     ignore_format_codes: false
-    channel: 'local'
-  - regex: '^&f\[&9MOD&f\].*'
+    channel: local
+  - regex: ^&f\[&9MOD&f\].*
     ignore_format_codes: false
-    channel: 'local'
+    channel: local

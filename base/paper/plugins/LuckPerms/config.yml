@@ -1,11 +1,11 @@
-server: global
+server: ${CFG_SERVER_NAME}
 use-server-uuid-cache: false
-storage-method: h2
+storage-method: mariadb
 data:
-  address: localhost
-  database: minecraft
+  address: minecraft-database-mariadb
+  database: architectsmp
   username: root
-  password: ''
+  password: architectsmp
   pool-settings:
     maximum-pool-size: 10
     minimum-idle: 10
@@ -15,9 +15,9 @@ data:
     properties:
       useUnicode: true
       characterEncoding: utf8
-  table-prefix: 'luckperms_'
-  mongodb-collection-prefix: ''
-  mongodb-connection-uri: ''
+  table-prefix: luckperms_
+  mongodb-collection-prefix: ""
+  mongodb-connection-uri: ""
 split-storage:
   enabled: false
   methods:
@@ -28,20 +28,20 @@ split-storage:
     log: h2
 sync-minutes: -1
 watch-files: true
-messaging-service: auto
+messaging-service: pluginmsg
 auto-push-updates: true
 push-log-entries: true
 broadcast-received-log-entries: true
 redis:
   enabled: false
   address: localhost
-  password: ''
+  password: ""
 rabbitmq:
   enabled: false
   address: localhost
-  vhost: '/'
-  username: 'guest'
-  password: 'guest'
+  vhost: /
+  username: guest
+  password: guest
 temporary-add-behaviour: deny
 primary-group-calculation: parents-by-weight
 argument-based-command-permissions: false
@@ -52,17 +52,17 @@ auto-install-translations: true
 meta-formatting:
   prefix:
     format:
-      - "highest"
+      - highest
     duplicates: first-only
     start-spacer: ""
-    middle-spacer: " "
+    middle-spacer: ' '
     end-spacer: ""
   suffix:
     format:
-      - "highest"
+      - highest
     duplicates: first-only
     start-spacer: ""
-    middle-spacer: " "
+    middle-spacer: ' '
     end-spacer: ""
 inheritance-traversal-algorithm: depth-first-pre-order
 post-traversal-inheritance-sort: false
@@ -85,7 +85,7 @@ apply-bukkit-attachment-permissions: true
 world-rewrite:
 group-weight:
 enable-ops: true
-auto-op: false
+auto-op: true
 commands-allow-op: true
 vault-unsafe-lookups: false
 vault-group-use-displaynames: true
