@@ -41,11 +41,9 @@ jobs:
       - name: Cleanup
         run: |
           find . -type f -exec sed -i -e '/^[ \t]*#/d; /^[[:space:]]*$/d; s/[[:blank:]]*$//' {} +
-          find . -type f -name "*.jar" -o -empty -delete
         working-directory: ${{ env.base-directory }}
       - name: Merge
         run: |
-          set -x
           for f in $(find * -type f -name "*.yml" -o -name "*.yaml" -o -name "*.txt"); do
             echo $f && mkdir -p $(dirname "${{ env.base-directory }}/${f}")
             yq e -MPI2 "${f}" > "${{ env.base-directory }}/${f}"
@@ -64,3 +62,18 @@ jobs:
           labels: minecraft/configs
           body: |
             Signed-off-by: Chip Wolf <chipwolf@users.noreply.github.com>
+      - name: Patch
+        run: |
+          for f in $(find * -type f); do
+            mkdir -p $(dirname ${{ env.base-directory }}/${f}) && touch ${{ env.base-directory }}/${f}
+            yq eval-all -iMPI2 'select(fileIndex == 0) * select(fileIndex == 1)' ${{ env.base-directory }}/${f} ${f}
+          done
+        working-directory: ${{ env.overlay-directory }}
+      - name: Archive Release
+        run: |
+          zip -r paper.zip . && mv paper.zip ${{ github.workspace }}
+        working-directory: ${{ env.base-directory }}
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "paper.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
