@@ -20,7 +20,7 @@ jobs:
         run: |
           sudo wget -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
           sudo chmod +x /usr/local/bin/yq
-          rm -rf *
+          rm -rf * && mkdir run
         working-directory: ${{ env.working-directory }}
       - uses: addnab/docker-run-action@v2
         continue-on-error: true
@@ -29,7 +29,7 @@ jobs:
           image: itzg/minecraft-server:latest
           shell: bash
           options: |
-            -v ${{ env.working-directory }}:/data
+            -v ${{ env.working-directory }}/run:/data
             -v ${{ github.workspace }}/plugins/paper:/plugins
             -e UID=1001 -e GID=116 -e EULA=TRUE
             -e MAX_TICK_TIME=1 -e MAX_WORLD_SIZE=1
@@ -41,9 +41,15 @@ jobs:
       - name: Cleanup
         run: |
           find . -type f -exec sed -i -e '/^[ \t]*#/d; /^[[:space:]]*$/d; s/[[:blank:]]*$//' {} +
-          find . -type f -name "*.yml" -o -name "*.yaml" -o -name "*.txt" -exec yq e -iMI2 {} + || true
           find . -type f -name "*.jar" -o -empty -delete
         working-directory: ${{ env.working-directory }}
+      - name: Merge
+        run: |
+          for f in $(find * -type f); do
+            mkdir -p $(dirname ${{ env.working-directory }}/${f}) && touch ${{ env.working-directory }}/${f}
+            yq eval-all -iMPI2 'select(fileIndex == 0) * select(fileIndex == 1)' ${{ env.working-directory }}/${f} ${f}
+          done
+        working-directory: ${{ env.working-directory }}/run
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:

@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       base-directory: ${{ github.workspace }}/base/paper/
-      overlay-directory: ${{ github.workspace }}/config/paper/
+      overlay-directory: ${{ github.workspace }}/overlay/paper/
     steps:
       - uses: actions/checkout@v2
         with:
