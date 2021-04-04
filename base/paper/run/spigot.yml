@@ -53,6 +53,7 @@ world-settings:
     verbose: false
   default:
     verbose: false
+    max-tnt-per-tick: 100
     hopper-amount: 1
     dragon-death-sound-radius: 0
     seed-village: 10387312
@@ -71,19 +72,23 @@ world-settings:
     seed-mansion: 10387319
     seed-fossil: 14357921
     seed-portal: 34222645
-    max-tnt-per-tick: 100
     enable-zombie-pigmen-portal-spawns: true
     view-distance: default
     item-despawn-rate: 6000
     wither-spawn-sound-radius: 0
-    nerf-spawner-mobs: false
     arrow-despawn-rate: 1200
     trident-despawn-rate: 1200
     hanging-tick-frequency: 100
     zombie-aggressive-towards-villager: true
+    nerf-spawner-mobs: false
     mob-spawn-range: 8
     end-portal-sound-radius: 0
     max-entity-collisions: 8
+    max-tick-time:
+      tile: 50
+      entity: 50
+    squid-spawn-range:
+      min: 45.0
     merge-radius:
       exp: 3.0
       item: 2.5
@@ -140,11 +145,6 @@ world-settings:
       swim-multiplier: 0.01
       sprint-multiplier: 0.1
       other-multiplier: 0.0
-    max-tick-time:
-      tile: 50
-      entity: 50
-    squid-spawn-range:
-      min: 45.0
     entity-tracking-range:
       players: 48
       animals: 48
