@@ -1,6 +1,3 @@
-checkInterval: 20
-checkOp: false
-afkOnJoin: false
 actions:
   "180":
     - messages:prevent
@@ -9,39 +6,42 @@ actions:
     - messages:protected
   "360":
     - commands:kick
+afkOnJoin: false
+broadcasts:
+  nolonger: '&e%player% &6is no longer AFK'
+  nowafk: '&e%player% &6is now AFK'
+  prefix: '&4[&fx&c&lAntiAFK&4]&f '
+checkInterval: 20
+checkOp: false
+commands:
+  kick: kick %player% &4[&fx&c&lAntiAFK&4] &eYou're AFK
+disableMetrics: false
+disableVersionCheck: false
 events:
-  onAfk:
-    teleport: false
-    location: world,x,y,z
-    noDamage: true
-    actions:
-      - broadcasts:nowafk
   noLonger:
-    tpToBackLoc: false
     actions:
       - broadcasts:nolonger
+    tpToBackLoc: false
+  onAfk:
+    actions:
+      - broadcasts:nowafk
+    location: world,x,y,z
+    noDamage: true
+    teleport: false
 internalMessages:
-  reload: '&aConfiguration reloaded.'
-  nopermission: '&cYou don''t have the permission to do that.'
   nohurt: '&cYou can''t hurt an AFK player'
+  nopermission: '&cYou don''t have the permission to do that.'
   playernotfound: '&cPlayer ''&e%player%&c'' not found.'
+  reload: '&aConfiguration reloaded.'
 messages:
   prefix: '&4[&fx&c&lAntiAFK&4]&f '
   prevent: '&6Looks like you''re AFK...'
   protected: '&6You''re now protected.'
-broadcasts:
-  prefix: '&4[&fx&c&lAntiAFK&4]&f '
-  nowafk: '&e%player% &6is now AFK'
-  nolonger: '&e%player% &6is no longer AFK'
-commands:
-  kick: kick %player% &4[&fx&c&lAntiAFK&4] &eYou're AFK
 permissions:
+  admin: xantiafk.admin
   afk: xantiafk.afk
   bypass: xantiafk.bypass
-  admin: xantiafk.admin
 placeholders:
   status:
-    default: ""
     afk: ' &4[&cAFK&4]'
-disableMetrics: false
-disableVersionCheck: false
+    default: ""

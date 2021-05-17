@@ -1,16 +1,16 @@
-NicknameSynchronizationEnabled: false
-NicknameSynchronizationCycleTime: 3
-NicknameSynchronizationFormat: '%displayname%'
+BanSynchronizationDiscordToMinecraft: false
+BanSynchronizationDiscordToMinecraftReason: '&cYou have been banned until further notice from the server because you were banned on our Discord server.'
+BanSynchronizationMinecraftToDiscord: false
+GroupRoleSynchronizationCycleCompletely: false
+GroupRoleSynchronizationCycleTime: 5
+GroupRoleSynchronizationEnableDenyPermission: false
 GroupRoleSynchronizationGroupsAndRolesToSync:
   trusted: "000000000000000000"
   vip: "000000000000000000"
 GroupRoleSynchronizationMinecraftIsAuthoritative: true
-GroupRoleSynchronizationOneWay: false
-GroupRoleSynchronizationEnableDenyPermission: false
-GroupRoleSynchronizationPrimaryGroupOnly: false
 GroupRoleSynchronizationOnLink: true
-GroupRoleSynchronizationCycleTime: 5
-GroupRoleSynchronizationCycleCompletely: false
-BanSynchronizationDiscordToMinecraft: false
-BanSynchronizationDiscordToMinecraftReason: '&cYou have been banned until further notice from the server because you were banned on our Discord server.'
-BanSynchronizationMinecraftToDiscord: false
+GroupRoleSynchronizationOneWay: false
+GroupRoleSynchronizationPrimaryGroupOnly: false
+NicknameSynchronizationCycleTime: 3
+NicknameSynchronizationEnabled: false
+NicknameSynchronizationFormat: '%displayname%'
