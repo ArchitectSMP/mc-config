@@ -1,55 +1,55 @@
-Enabled: true
 CheckForUpdates: true
-NoCommandPermissionMsg: '&cYou do not have permission to do that!'
-PerPlayerToggle:
-  Enable: false
+Death:
+  AffectedWorlds:
+    - world
+    - world_nether
+    - world_the_end
+  HideDeath: true
+  NeedsToBeOnline: 0
+  Permissions:
+    HideOnlyIfHasPermission: false
+    HideOnlyIfWithoutPermission: false
+    UsePermissions: false
+Enabled: true
 Join:
+  AffectedWorlds:
+    - world
+    - world_nether
+    - world_the_end
   HideJoin: true
   NeedsToBeOnline: 0
   OnlyForNewPlayers: false
   OnlyForOldPlayers: false
   Permissions:
-    UsePermissions: false
     HideOnlyIfHasPermission: false
     HideOnlyIfWithoutPermission: false
-  AffectedWorlds:
-    - world
-    - world_nether
-    - world_the_end
-Quit:
-  HideQuit: true
-  NeedsToBeOnline: 0
-  OnlyForNewPlayers: false
-  OnlyForOldPlayers: false
-  Permissions:
     UsePermissions: false
-    HideOnlyIfHasPermission: false
-    HideOnlyIfWithoutPermission: false
-  AffectedWorlds:
-    - world
-    - world_nether
-    - world_the_end
 Kick:
+  AffectedWorlds:
+    - world
+    - world_nether
+    - world_the_end
   HideKick: true
   NeedsToBeOnline: 0
   OnlyForNewPlayers: false
   OnlyForOldPlayers: false
   Permissions:
-    UsePermissions: false
     HideOnlyIfHasPermission: false
     HideOnlyIfWithoutPermission: false
+    UsePermissions: false
+NoCommandPermissionMsg: '&cYou do not have permission to do that!'
+PerPlayerToggle:
+  Enable: false
+Quit:
   AffectedWorlds:
     - world
     - world_nether
     - world_the_end
-Death:
-  HideDeath: true
+  HideQuit: true
   NeedsToBeOnline: 0
+  OnlyForNewPlayers: false
+  OnlyForOldPlayers: false
   Permissions:
-    UsePermissions: false
     HideOnlyIfHasPermission: false
     HideOnlyIfWithoutPermission: false
-  AffectedWorlds:
-    - world
-    - world_nether
-    - world_the_end
+    UsePermissions: false

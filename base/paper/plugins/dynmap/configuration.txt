@@ -1,106 +1,124 @@
-deftemplatesuffix: hires
-storage:
-  type: filetree
+allow-symlinks: true
+block-alias:
+check-banned-ips: true
 components:
   - class: org.dynmap.ClientConfigurationComponent
-  - class: org.dynmap.InternalClientUpdateComponent
+  - allowwebchat: true
+    block-banned-player-chat: true
+    chatlengthlimit: 256
+    class: org.dynmap.InternalClientUpdateComponent
+    hide-if-invisiblity-potion: true
+    hideifsneaking: false
+    hidenames: false
+    hidewebchatip: false
+    includehiddenplayers: false
+    protected-player-info: false
+    require-player-login-ip: false
     sendhealth: true
     sendposition: true
-    allowwebchat: true
-    webchat-interval: 5
-    hidewebchatip: false
     trustclientname: false
-    includehiddenplayers: false
     use-name-colors: false
     use-player-login-ip: true
-    require-player-login-ip: false
-    block-banned-player-chat: true
-    webchat-requires-login: false
+    webchat-interval: 5
     webchat-permissions: false
-    chatlengthlimit: 256
-    hideifsneaking: false
-    protected-player-info: false
-    hide-if-invisiblity-potion: true
-    hidenames: false
-  - class: org.dynmap.SimpleWebChatComponent
-    allowchat: true
+    webchat-requires-login: false
+  - allowchat: true
     allowurlname: false
+    class: org.dynmap.SimpleWebChatComponent
   - class: org.dynmap.MarkersComponent
-    type: markers
-    showlabel: false
-    enablesigns: false
     default-sign-set: markers
+    enablesigns: false
+    maxofflinetime: 30
+    offlinehidebydefault: true
+    offlineicon: offlineuser
+    offlinelabel: Offline
+    offlineminzoom: 0
+    showlabel: false
+    showofflineplayers: false
     showspawn: true
+    showspawnbeds: false
+    showworldborder: true
+    spawnbedformat: '%name%''s bed'
+    spawnbedhidebydefault: true
+    spawnbedicon: bed
+    spawnbedlabel: Spawn Beds
+    spawnbedminzoom: 0
     spawnicon: world
     spawnlabel: Spawn
-    showofflineplayers: false
-    offlinelabel: Offline
-    offlineicon: offlineuser
-    offlinehidebydefault: true
-    offlineminzoom: 0
-    maxofflinetime: 30
-    showspawnbeds: false
-    spawnbedlabel: Spawn Beds
-    spawnbedicon: bed
-    spawnbedhidebydefault: true
-    spawnbedminzoom: 0
-    spawnbedformat: '%name%''s bed'
-    showworldborder: true
+    type: markers
     worldborderlabel: Border
-  - class: org.dynmap.ClientComponent
+  - allowurlname: false
+    class: org.dynmap.ClientComponent
     type: chat
-    allowurlname: false
   - class: org.dynmap.ClientComponent
-    type: chatballoon
     focuschatballoons: false
+    type: chatballoon
   - class: org.dynmap.ClientComponent
-    type: chatbox
-    showplayerfaces: true
     messagettl: 5
     sendbutton: false
+    showplayerfaces: true
+    type: chatbox
   - class: org.dynmap.ClientComponent
-    type: playermarkers
+    hidebydefault: false
+    label: Players
+    layerprio: 0
+    showplayerbody: false
     showplayerfaces: true
     showplayerhealth: true
-    showplayerbody: false
     smallplayerfaces: false
-    hidebydefault: false
-    layerprio: 0
-    label: Players
+    type: playermarkers
   - class: org.dynmap.ClientComponent
     type: link
   - class: org.dynmap.ClientComponent
-    type: timeofdayclock
     showdigitalclock: true
     showweather: true
+    type: timeofdayclock
   - class: org.dynmap.ClientComponent
-    type: coord
-    label: Location
     hidey: false
-    show-mcr: false
+    label: Location
     show-chunk: false
-display-whitelist: false
-renderinterval: 1
-renderacceleratethreshold: 60
-renderaccelerateinterval: 0.2
-tiles-rendered-at-once: 2
-usenormalthreadpriority: true
-saverestorepending: true
-save-pending-period: 900
-zoomoutperiod: 30
-initial-zoomout-validate: true
-tileupdatedelay: 30
-enabletilehash: true
-smooth-lighting: true
-use-brightness-table: true
-block-alias:
-image-format: jpg-q90
-use-generated-textures: true
+    show-mcr: false
+    type: coord
 correct-water-lighting: true
-transparent-leaves: true
 ctm-support: true
 custom-colors-support: true
-skin-url: http://skins.minecraft.net/MinecraftSkins/%player%.png
+custom-commands:
+  image-updates:
+    postupdatecommand: ""
+    preupdatecommand: ""
+cyrillic-support: false
+defaultmap: flat
+defaultworld: world
+defaultzoom: 0
+deftemplatesuffix: hires
+disable-webserver: false
+display-whitelist: false
+dump-missing-blocks: false
+enabletilehash: true
+exportpath: export
+fullrender-min-tps: 18.0
+fullrenderplayerlimit: 0
+grayplayerswhenhidden: true
+image-format: jpg-q90
+initial-zoomout-validate: true
+joinmessage: '%playername% joined'
+login-enabled: false
+login-required: false
+max-sessions: 30
+maxchunkspertick: 200
+msg:
+  chatnotallowed: You are not permitted to send chat messages
+  chatrequireslogin: Chat Requires Login
+  hiddennamejoin: Player joined
+  hiddennamequit: Player quit
+  maptypes: Map Types
+  players: Players
+per-tick-time-limit: 50
+persist-ids-by-ip: true
+player-sort-permission-nodes:
+  - bukkit.command.op
+progressloginterval: 100
+quitmessage: '%playername% quit'
 render-triggers:
   - blockplaced
   - blockbreak
@@ -114,57 +132,39 @@ render-triggers:
   - explosion
   - structuregrow
   - blockgrow
-tilespath: web/tiles
-webpath: web
-exportpath: export
-webserver-port: 8123
-max-sessions: 30
-disable-webserver: false
-allow-symlinks: true
-login-enabled: false
-login-required: false
-timesliceinterval: 0.0
-maxchunkspertick: 200
-progressloginterval: 100
-updaterate: 2000
-fullrenderplayerlimit: 0
-updateplayerlimit: 0
-per-tick-time-limit: 50
-update-min-tps: 18.0
-fullrender-min-tps: 18.0
-zoomout-min-tps: 18.0
+renderaccelerateinterval: 0.2
+renderacceleratethreshold: 60
+renderinterval: 1
+round-coordinates: true
+save-pending-period: 900
+saverestorepending: true
+showlayercontrol: true
 showplayerfacesinmenu: true
-grayplayerswhenhidden: true
-player-sort-permission-nodes:
-  - bukkit.command.op
+skin-url: http://skins.minecraft.net/MinecraftSkins/%player%.png
+smooth-lighting: true
+snapshotcachesize: 500
+soft-ref-cache: true
+spammessage: You may only chat once every %interval% seconds.
+storage:
+  type: filetree
+tiles-rendered-at-once: 2
+tilespath: web/tiles
+tileupdatedelay: 30
+timesliceinterval: 0.0
+transparent-leaves: true
 trusted-proxies:
   - 127.0.0.1
   - 0:0:0:0:0:0:0:1
-joinmessage: '%playername% joined'
-quitmessage: '%playername% quit'
-spammessage: You may only chat once every %interval% seconds.
-webmsgformat: '&color;2[WEB] %playername%: &color;f%message%'
-showlayercontrol: true
-check-banned-ips: true
-defaultzoom: 0
-defaultworld: world
-defaultmap: flat
-persist-ids-by-ip: true
-cyrillic-support: false
-round-coordinates: true
-msg:
-  maptypes: Map Types
-  players: Players
-  chatrequireslogin: Chat Requires Login
-  chatnotallowed: You are not permitted to send chat messages
-  hiddennamejoin: Player joined
-  hiddennamequit: Player quit
+update-min-tps: 18.0
+updateplayerlimit: 0
+updaterate: 2000
 url:
-custom-commands:
-  image-updates:
-    preupdatecommand: ""
-    postupdatecommand: ""
-snapshotcachesize: 500
-soft-ref-cache: true
+use-brightness-table: true
+use-generated-textures: true
+usenormalthreadpriority: true
 verbose: false
-dump-missing-blocks: false
+webmsgformat: '&color;2[WEB] %playername%: &color;f%message%'
+webpath: web
+webserver-port: 8123
+zoomout-min-tps: 18.0
+zoomoutperiod: 30

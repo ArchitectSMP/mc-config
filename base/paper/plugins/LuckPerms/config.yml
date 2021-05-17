@@ -1,103 +1,103 @@
-server: global
-use-server-uuid-cache: false
-storage-method: h2
+allow-invalid-usernames: false
+apply-bukkit-attachment-permissions: true
+apply-bukkit-child-permissions: true
+apply-bukkit-default-permissions: true
+apply-default-negated-permissions-before-wildcards: false
+apply-global-groups: true
+apply-global-world-groups: true
+apply-regex: true
+apply-shorthand: true
+apply-sponge-implicit-wildcards: false
+apply-wildcards: true
+argument-based-command-permissions: false
+auto-install-translations: true
+auto-op: false
+auto-push-updates: true
+broadcast-received-log-entries: true
+commands-allow-op: true
+context-satisfy-mode: at-least-one-value-per-key
 data:
   address: localhost
   database: minecraft
-  username: root
-  password: ""
-  pool-settings:
-    maximum-pool-size: 10
-    minimum-idle: 10
-    maximum-lifetime: 1800000 # 30 minutes
-    keepalive-time: 0
-    connection-timeout: 5000 # 5 seconds
-    properties:
-      useUnicode: true
-      characterEncoding: utf8
-  table-prefix: luckperms_
   mongodb-collection-prefix: ""
   mongodb-connection-uri: ""
+  password: ""
+  pool-settings:
+    connection-timeout: 5000 # 5 seconds
+    keepalive-time: 0
+    maximum-lifetime: 1800000 # 30 minutes
+    maximum-pool-size: 10
+    minimum-idle: 10
+    properties:
+      characterEncoding: utf8
+      useUnicode: true
+  table-prefix: luckperms_
+  username: root
+debug-logins: false
+disabled-contexts:
+enable-ops: true
+group-weight:
+include-global: true
+include-global-world: true
+inheritance-traversal-algorithm: depth-first-pre-order
+log-notify: true
+log-notify-filtered-descriptions:
+messaging-service: auto
+meta-formatting:
+  prefix:
+    duplicates: first-only
+    end-spacer: ""
+    format:
+      - highest
+    middle-spacer: ' '
+    start-spacer: ""
+  suffix:
+    duplicates: first-only
+    end-spacer: ""
+    format:
+      - highest
+    middle-spacer: ' '
+    start-spacer: ""
+meta-value-selection:
+meta-value-selection-default: inheritance
+post-traversal-inheritance-sort: false
+prevent-primary-group-removal: false
+primary-group-calculation: parents-by-weight
+push-log-entries: true
+rabbitmq:
+  address: localhost
+  enabled: false
+  password: guest
+  username: guest
+  vhost: /
+redis:
+  address: localhost
+  enabled: false
+  password: ""
+register-command-list-data: true
+require-sender-group-membership-to-modify: false
+resolve-command-selectors: false
+server: global
 split-storage:
   enabled: false
   methods:
-    user: h2
     group: h2
-    track: h2
-    uuid: h2
     log: h2
+    track: h2
+    user: h2
+    uuid: h2
+storage-method: h2
 sync-minutes: -1
-watch-files: true
-messaging-service: auto
-auto-push-updates: true
-push-log-entries: true
-broadcast-received-log-entries: true
-redis:
-  enabled: false
-  address: localhost
-  password: ""
-rabbitmq:
-  enabled: false
-  address: localhost
-  vhost: /
-  username: guest
-  password: guest
 temporary-add-behaviour: deny
-primary-group-calculation: parents-by-weight
-argument-based-command-permissions: false
-require-sender-group-membership-to-modify: false
-log-notify: true
-log-notify-filtered-descriptions:
-auto-install-translations: true
-meta-formatting:
-  prefix:
-    format:
-      - highest
-    duplicates: first-only
-    start-spacer: ""
-    middle-spacer: ' '
-    end-spacer: ""
-  suffix:
-    format:
-      - highest
-    duplicates: first-only
-    start-spacer: ""
-    middle-spacer: ' '
-    end-spacer: ""
-inheritance-traversal-algorithm: depth-first-pre-order
-post-traversal-inheritance-sort: false
-context-satisfy-mode: at-least-one-value-per-key
-disabled-contexts:
-include-global: true
-include-global-world: true
-apply-global-groups: true
-apply-global-world-groups: true
-meta-value-selection-default: inheritance
-meta-value-selection:
-apply-wildcards: true
-apply-sponge-implicit-wildcards: false
-apply-default-negated-permissions-before-wildcards: false
-apply-regex: true
-apply-shorthand: true
-apply-bukkit-child-permissions: true
-apply-bukkit-default-permissions: true
-apply-bukkit-attachment-permissions: true
-world-rewrite:
-group-weight:
-enable-ops: true
-auto-op: false
-commands-allow-op: true
-vault-unsafe-lookups: false
+update-client-command-list: true
+use-server-uuid-cache: false
+use-vault-server: false
 vault-group-use-displaynames: true
+vault-ignore-world: false
+vault-include-global: true
 vault-npc-group: default
 vault-npc-op-status: false
-use-vault-server: false
 vault-server: global
-vault-include-global: true
-vault-ignore-world: false
-debug-logins: false
-allow-invalid-usernames: false
-prevent-primary-group-removal: false
-update-client-command-list: true
-register-command-list-data: true
-resolve-command-selectors: false
+vault-unsafe-lookups: false
+watch-files: true
+world-rewrite:

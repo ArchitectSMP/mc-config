@@ -1,12 +1,12 @@
 icons: {}
+playersets: {}
 sets:
   markers:
-    hide: false
+    areas: {}
     circles: {}
     deficon: default
-    areas: {}
+    hide: false
     label: Markers
-    markers: {}
-    lines: {}
     layerprio: 0
-playersets: {}
+    lines: {}
+    markers: {}

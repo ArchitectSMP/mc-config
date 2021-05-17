@@ -1,54 +1,54 @@
 profiles:
-  soft-nerf-animal-farms:
-    group:
-      types:
-        - category:animal
-      count: 15
-      distance: 5
-    actions:
-      - remove-random-movement
-      - disable-collisions
-  hard-nerf-animal-farms:
-    group:
-      types:
-        - category:animal
-      count: 15
-      distance: 5
-    actions:
-      - remove-awareness
-      - disable-collisions
   freeze-animal-farms:
-    group:
-      types:
-        - category:animal
-      count: 15
-      distance: 5
     actions:
       - remove-ai
       - disable-collisions
-  trim-animal-farms:
     group:
+      count: 15
+      distance: 5
       types:
         - category:animal
+  hard-nerf-animal-farms:
+    actions:
+      - remove-awareness
+      - disable-collisions
+    group:
+      count: 15
+      distance: 5
+      types:
+        - category:animal
+  soft-nerf-animal-farms:
+    actions:
+      - remove-random-movement
+      - disable-collisions
+    group:
+      count: 15
+      distance: 5
+      types:
+        - category:animal
+  trim-animal-farms:
+    actions:
+      - kill
+    group:
       count: 21
       distance: 5
       pure: true
-    actions:
-      - kill
-  trim-sparse-animal-farms:
-    group:
       types:
         - category:animal
+  trim-sparse-animal-farms:
+    actions:
+      - kill
+    group:
       count: 51
       distance: 160
       pure: true
+      types:
+        - category:animal
+  trim-villager-chunks:
     actions:
       - kill
-  trim-villager-chunks:
     group:
-      types:
-        - villager
       count: 11
       distance: same-chunk
-    actions:
-      - kill
+      types:
+        - villager

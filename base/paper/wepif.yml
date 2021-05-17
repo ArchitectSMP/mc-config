@@ -1,4 +1,20 @@
 ignore-nijiperms-bridges: true
+permissions:
+  groups:
+    admins:
+      permissions:
+        - '*'
+    default:
+      permissions:
+        - worldedit.reload
+        - worldedit.selection
+        - worlds.creative.worldedit.region
+  users:
+    sk89q:
+      groups:
+        - admins
+      permissions:
+        - worldedit
 resolvers:
   enabled:
     - PluginPermissionsResolver
@@ -9,19 +25,3 @@ resolvers:
     - VaultResolver
     - DinnerPermsResolver
     - FlatFilePermissionsResolver
-permissions:
-  groups:
-    default:
-      permissions:
-        - worldedit.reload
-        - worldedit.selection
-        - worlds.creative.worldedit.region
-    admins:
-      permissions:
-        - '*'
-  users:
-    sk89q:
-      permissions:
-        - worldedit
-      groups:
-        - admins

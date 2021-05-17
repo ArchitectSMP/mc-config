@@ -1,100 +1,130 @@
-InvisibilityFeatures:
-  NightVisionEffect: true
-  DisableDamage: true
-  DisableHunger: true
-  DisableMobTarget: true
-  DisablePreventBlockPlacement: true
-  RequireChatMessageSuffix: /
-  OpenChestsSilently: true
-  OpenChestsSilentlyPacketAdapter: false
-  OpenPlayerInventoryOnRightClick: true
-  AllowSpectatorInventoryEdit: true
-  DisablePressurePlates: true
-  DisablePush: false
-  HideInTablist: true
-  ResetShowInTabOnQuit: true
-  HideInGame: true
-  HideSpectatorMode: true
-  DefaultPickUpItemsOption: false
-  VanishCommands:
-  ReappearCommands:
-  CustomCommandMessages:
-    /examplemsg1 <vanished>: '&cPlayer not found'
-  DisableEnvironmentalDamageAfterReappear: 5
-  SetSleepingIgnored: true
-  SwitchGamemode: true
-VanishStateFeatures:
-  AutoVanishOnJoin: false
-  ReappearOnWorldChange: false
-  ReappearOnQuit: false
-  CheckPermissionOnWorldChange: false
-  CheckPermissionOnQuit: false
-  CheckPermissionOnLogin: false
-IndicationFeatures:
-  LayeredPermissions:
-    EnableSeePermission: true
-    LayeredSeeAndUsePermissions: false
-    MaxLevel: 100
-    HideInvisibleInCommands: false
-    AlternatePermissionChecking: false
-    StrictSetLevelPermissionChecking: false
-  MarkVanishedPlayersAsSpectators: true
-  MarkVanishedPlayersWithGlow: false
-SurvivalFriendlyFeatures:
-  Fly:
-    Enable: true
-    DisableOnReappear: true
-  GameMode:
-    ChangeToOnVanish:
-      Default: KEEP
-      ExampleWorld123: SPECTATOR
-    ChangeToOnReappear:
-      Default: KEEP
-      AnotherExampleWorld2: SURVIVAL
-    ReApplyGameModeChangeOnWorldChange: true
-    ReApplyGameModeChangeOnJoin: true
-    AlwaysApplyOnJoinVanished: true
-  Location:
-    TeleportBackOnReappear: false
-MessageOptions:
-  MessagesOnVanishReappear:
-    BroadcastMessageOnVanish: true
-    BroadcastMessageOnReappear: true
-    AdminsGetAnnouncementInstead: true
-    DontSendFakeJoinQuit: false
-    DontSendAdminAnnouncements: false
-  MessagesOnJoinQuit:
-    HideRealJoinQuitMessages: true
-    AnnounceRealJoinQuit: true
-    ReappearOnQuitHideMessage: true
-    RemindVanishedOnJoin: true
-  DisplayActionBar: true
-RestrictiveOptions:
-  PreventBlockBreaking: false
-  PreventBlockPlacing: false
-  PreventBlockUse: false
-  PreventInteract: false
-  PreventHittingEntities: false
-  PreventDroppingItems: false
-  PreventModifyingOwnInventory: false
-  PreventModifyingOtherInventory: false
-  PreventSpectatorTeleporting: false
-  PreventCreativeItemGrab: false
-  HiddenCoordinates: false
-  Commands:
-    VanishedCommandBlacklist:
-      - examplecommand123test
-      - anotherexamplecommand123
-    UseAsWhitelist: false
+CompatibilityOptions:
+  AsyncPlayerChatEventPriority: HIGH
+  PlayerCommandPreprocessEventPriority: HIGH
+  PlayerJoinEventPriority: HIGH # <- keep HIGH if you use Essentials to modify join/quit messages !!
+  PlayerQuitEventPriority: HIGH
+ConfigVersion: 2.6.6
 ExternalInvisibility:
   ServerList:
     AdjustAmountOfOnlinePlayers: true
     AdjustListOfLoggedInPlayers: true
+HookOptions:
+  DynmapSendJoinLeaveMessages: true
+  EnableCMIHook: true
+  EnableCitizensHook: true
+  EnableCustomParticleEffectsHook: true
+  EnableDiscordSRVHook: true
+  EnableDisguiseCraftHook: true
+  EnableDynmapHook: true
+  EnableEnjinMinecraftPluginHook: true
+  EnableEssentialsHook: true
+  EnableFeatherBoardHook: true
+  EnableLibsDisguisesHook: true
+  EnableMVdWPlaceholderAPIHook: true
+  EnableNametagEditHook: true
+  EnablePlaceholderAPIHook: true
+  EnableSuperTrailsHook: true
+  EnableTrailGUIHook: true
+IndicationFeatures:
+  LayeredPermissions:
+    AlternatePermissionChecking: false
+    EnableSeePermission: true
+    HideInvisibleInCommands: false
+    LayeredSeeAndUsePermissions: false
+    MaxLevel: 100
+    StrictSetLevelPermissionChecking: false
+  MarkVanishedPlayersAsSpectators: true
+  MarkVanishedPlayersWithGlow: false
+InvisibilityFeatures:
+  AllowSpectatorInventoryEdit: true
+  CustomCommandMessages:
+    /examplemsg1 <vanished>: '&cPlayer not found'
+  DefaultPickUpItemsOption: false
+  DisableDamage: true
+  DisableEnvironmentalDamageAfterReappear: 5
+  DisableHunger: true
+  DisableMobTarget: true
+  DisablePressurePlates: true
+  DisablePreventBlockPlacement: true
+  DisablePush: false
+  HideInGame: true
+  HideInTablist: true
+  HideSpectatorMode: true
+  NightVisionEffect: true
+  OpenChestsSilently: true
+  OpenChestsSilentlyPacketAdapter: false
+  OpenPlayerInventoryOnRightClick: true
+  ReappearCommands:
+  RequireChatMessageSuffix: /
+  ResetShowInTabOnQuit: true
+  SetSleepingIgnored: true
+  SwitchGamemode: true
+  VanishCommands:
+InvisibilityMethod:
+  Advanced:
+    DisabledInvisibilityModules:
+      - ScoreboardTeam
+      - TabComplete
+  PlayerHider: Hybrid
+MessageOptions:
+  DisplayActionBar: true
+  MessagesOnJoinQuit:
+    AnnounceRealJoinQuit: true
+    HideRealJoinQuitMessages: true
+    ReappearOnQuitHideMessage: true
+    RemindVanishedOnJoin: true
+  MessagesOnVanishReappear:
+    AdminsGetAnnouncementInstead: true
+    BroadcastMessageOnReappear: true
+    BroadcastMessageOnVanish: true
+    DontSendAdminAnnouncements: false
+    DontSendFakeJoinQuit: false
+MiscellaneousOptions:
+  AntiSpam:
+    AlwaysCoverVanish: false
+    AntiSpamCheck: true
+    AntiSpamDelay: 1
+  Bungeecord:
+    BasicDatabaseConnector: false
+    CustomURI: ""
+    Database: ""
+    Enable: false
+    Ip: ""
+    Password: ""
+    Port: "3306"
+    User: ""
+  Command:
+    Aliases:
+      - premiumvanish
+      - v
+      - vanish
+    ForceOverrideForAliases: true
+    Name: pv
+  UpdateChecker:
+    Enable: true
+    NotifyAdmins: true
+RestrictiveOptions:
+  Commands:
+    UseAsWhitelist: false
+    VanishedCommandBlacklist:
+      - examplecommand123test
+      - anotherexamplecommand123
+  HiddenCoordinates: false
+  PreventBlockBreaking: false
+  PreventBlockPlacing: false
+  PreventBlockUse: false
+  PreventCreativeItemGrab: false
+  PreventDroppingItems: false
+  PreventHittingEntities: false
+  PreventInteract: false
+  PreventModifyingOtherInventory: false
+  PreventModifyingOwnInventory: false
+  PreventSpectatorTeleporting: false
 ScoreboardOptions:
   Enable: true
   Permission: false
   Sidebar:
-    ScoreboardHeader: '&6>       PremiumVanish       <'
+    InfoUpdateInterval: 5
     Lines:
       - ""
       - '&aTarget: &f%target% %locked%'
@@ -107,61 +137,31 @@ ScoreboardOptions:
       - ""
       - '&aTime: &f%time{hh:mma | yyyy/MM/dd}%'
       - ""
-    InfoUpdateInterval: 5
+    ScoreboardHeader: '&6>       PremiumVanish       <'
   Targeting:
     AutoTargetClosestPlayer: true
-    TargetOnRightClick: true
     TargetGlows: true
-HookOptions:
-  EnableEssentialsHook: true
-  EnableDynmapHook: true
-  DynmapSendJoinLeaveMessages: true
-  EnableLibsDisguisesHook: true
-  EnableDisguiseCraftHook: true
-  EnableTrailGUIHook: true
-  EnableSuperTrailsHook: true
-  EnablePlaceholderAPIHook: true
-  EnableMVdWPlaceholderAPIHook: true
-  EnableCitizensHook: true
-  EnableCustomParticleEffectsHook: true
-  EnableNametagEditHook: true
-  EnableFeatherBoardHook: true
-  EnableEnjinMinecraftPluginHook: true
-  EnableCMIHook: true
-  EnableDiscordSRVHook: true
-InvisibilityMethod:
-  PlayerHider: Hybrid
-  Advanced:
-    DisabledInvisibilityModules:
-      - ScoreboardTeam
-      - TabComplete
-CompatibilityOptions:
-  PlayerJoinEventPriority: HIGH # <- keep HIGH if you use Essentials to modify join/quit messages !!
-  PlayerQuitEventPriority: HIGH
-  AsyncPlayerChatEventPriority: HIGH
-  PlayerCommandPreprocessEventPriority: HIGH
-MiscellaneousOptions:
-  Bungeecord:
-    Enable: false
-    Ip: ""
-    Port: "3306"
-    CustomURI: ""
-    User: ""
-    Password: ""
-    Database: ""
-    BasicDatabaseConnector: false
-  AntiSpam:
-    AntiSpamCheck: true
-    AntiSpamDelay: 1
-    AlwaysCoverVanish: false
-  Command:
-    Name: pv
-    Aliases:
-      - premiumvanish
-      - v
-      - vanish
-    ForceOverrideForAliases: true
-  UpdateChecker:
+    TargetOnRightClick: true
+SurvivalFriendlyFeatures:
+  Fly:
+    DisableOnReappear: true
     Enable: true
-    NotifyAdmins: true
-ConfigVersion: 2.6.6
+  GameMode:
+    AlwaysApplyOnJoinVanished: true
+    ChangeToOnReappear:
+      AnotherExampleWorld2: SURVIVAL
+      Default: KEEP
+    ChangeToOnVanish:
+      Default: KEEP
+      ExampleWorld123: SPECTATOR
+    ReApplyGameModeChangeOnJoin: true
+    ReApplyGameModeChangeOnWorldChange: true
+  Location:
+    TeleportBackOnReappear: false
+VanishStateFeatures:
+  AutoVanishOnJoin: false
+  CheckPermissionOnLogin: false
+  CheckPermissionOnQuit: false
+  CheckPermissionOnWorldChange: false
+  ReappearOnQuit: false
+  ReappearOnWorldChange: false
