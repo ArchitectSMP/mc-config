@@ -1,5 +1,6 @@
 **/.archive-unpack/*
 **/bStats/config.yml
+**/CoreProtect/database.db-journal
 **/dynmap/colorschemes/*
 **/dynmap/lightings.txt
 **/dynmap/perspectives.txt

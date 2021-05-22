@@ -86,5 +86,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "paper.zip"
-          tag: ${{ steps.tag.outputs.tag }}
+          #tag: ${{ steps.tag.outputs.tag }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          replacesArtifacts: true
